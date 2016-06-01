@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "Insync 1.2.14 and Fedora 22"
+date:   2015-06-20 21:34:00 +0100
+comments: true
+categories: linux
+---
+
+# Insync 1.2.11
+
+I updated Fedora to 22 (via FedUp) a few weeks ago. Almost everything works good but I found a problem with [Insync](https://www.insynchq.com/). It stopped automatic starting after boot and it wasn't possible to run it manually.
+
+I discovered an error mesage:
+
+{% highlight bash %}
+$ insync start --no-daemon
+./insync: symbol lookup error: /lib64/libpangoft2-1.0.so.0: undefined symbol: FcWeightFromOpenType
+{% endhighlight %}
+
+Official support forum has two threads for it:
+
+* <https://support.insynchq.com/t/new-insync-version-1-2-11/1367/11>
+* <https://support.insynchq.com/t/new-insync-version-1-2-10/1168/18>
+
+The first suggests installing `pango-1.36.8-5.fc21.x86_64.rpm` which I don't want to right now.
+
+The suggestion from second thread is better. At first you can try if it works by this:
+
+{% highlight bash %}
+$ insync start --headless --no-daemon
+{% endhighlight %}
+
+You should see some messages with a list of directories which are watched.
+And you can run it as a daemon by this:
+
+{% highlight bash %}
+$ insync start --headless
+{% endhighlight %}
+
+You can of course create an automatic starting of this command after boot.
+The bad thing is that I still don't know how to reconfigure Insync for changing directory or google account etc.
+
+I hope Insync will fix this issue as soon as possible. But the synchronization works for me right now, which is good.
+
+# Insync 1.2.14
+
+[Insync](https://www.insynchq.com/) (finally) fixed a problem below (with Insync 1.2.11) but [installation of new version isn't pure automatic](https://support.insynchq.com/t/new-insync-version-1-2-13-1-2-14/1814/5). The fixed version of Insync is 1.2.14 but automatic upgrade will fail like this:
+
+{% highlight bash %}
+Installing  : insync-1.2.14.35168-fc21.x86_64                                                                                                                     1/1 
+Error unpacking rpm package insync-1.2.14.35168-fc21.x86_64
+error: unpacking of archive failed on file /usr/lib/insync/faulthandler-2.1-py2.7-linux-x86_64.egg: cpio: rename
+insync-1.2.14.35168-fc21.x86_64 was supposed to be installed but is not!
+{% endhighlight %}
+
+You have to remove Insync and install it again by this:
+
+{% highlight bash %}
+sudo dnf -y remove insync
+sudo rm -r /usr/lib/insync
+sudo dnf install insync
+{% endhighlight %}
+
+Now your Insync should works again (also with GUI).
+

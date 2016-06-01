@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Byobu with screen keybindings (for split window)"
+date:   2013-12-11 13:18:00 +0100
+categories: screen
+---
+
+_EDIT:_ I have to say, I'm using Tmux right now, because it's better although it takes some time to learn all its keyboard shortcuts but it's very similar to Screen (it's based on screen and the main different between them is that the screen is using ctrl+a as a base shortcut and Tmux is using ctrl+b).
+
+For using byobu with keybindings from screen, without f-keys, as F2 for new window.
+Why?
+Because in mindinght commander with running byobu is not possible using F5 to copy files, etc.
+And in ssh connection withtout byobu f-keys it's possible spliting window vertically.
+
+make your `~/.byobu/keybindings` look like this:
+
+{% highlight bash %}
+# source $BYOBU_PREFIX/share/byobu/keybindings/common
+. /usr/share/byobu/keybindings/f-keys.screen.disable
+{% endhighlight %}
+[<http://askubuntu.com/a/292153>]
+
+run:
+{% highlight bash %}
+$ byobu-select-backend
+and select
+select the byobu backend:
+  1. tmux
+  2. screen
+Choose 1-2 [1]:  <-- 2
+{% endhighlight %}
+
+
+how use keybindings to split: <http://tomlee.co/2011/10/gnu-screen-splitting/>
+
+all screen keybindings: <http://aperiodic.net/screen/quick_reference>
+
+for byobu config run:
+{% highlight bash %}
+$ byobu-config
+{% endhighlight %}
+
+there is possible set autorun byoubu in ssh connect
+
+for again using _f-keys_ in byobu run:
+{% highlight bash %}
+$ byobu-select-backend
+{% endhighlight %}
+
+select tmux and restart byobu
+
+byobu cheatsheet: <https://help.ubuntu.com/community/Byobu>
+
+tmux cheatsheet: <http://www.dayid.org/os/notes/tm.html>
+

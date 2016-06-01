@@ -422,7 +422,7 @@ html, body, .notepad-post-container, .notepad-post-header {
     @media only screen and (min-width: 90em) {
       .notepad-page-title h1,
       .notepad-post-title-simple h1 {
-        font-size: 5.3125rem;
+        font-size: 3.3125rem;
         padding-top: 8.125rem;
         padding-bottom: 8.125rem; } }
   .notepad-page-title .notepad-post-meta-simple,
@@ -445,7 +445,7 @@ html, body, .notepad-post-container, .notepad-post-header {
       .notepad-page-title .notepad-post-meta-simple,
       .notepad-post-title-simple .notepad-post-meta-simple {
         padding-top: 8.75rem;
-        padding-bottom: 5.625rem; } }
+        padding-bottom: 0.625rem; } }
     @media only screen and (min-width: 90em) {
       .notepad-page-title .notepad-post-meta-simple,
       .notepad-post-title-simple .notepad-post-meta-simple {
