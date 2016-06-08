@@ -74,4 +74,4 @@ kramdown:
 gems:
         - jekyll-paginate
 #- jemoji
-
+exclude: [ deploy.sh, README.md ]
