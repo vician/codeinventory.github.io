@@ -11,5 +11,3 @@ ln -sf _config.local.yml _config.yml
 rsync -avz -e ssh --delete ./_site/ vf.vician.cz:/var/www/vician.cz/
 # VF2
 rsync -avz -e ssh --delete ./_site/ vf2.vician.cz:/var/www/vician.cz/
-# CH
-rsync -avz -e ssh --delete ./_site/ ch.vician.cz:/var/www/vician.cz/
