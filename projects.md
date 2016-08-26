@@ -12,6 +12,8 @@ chart: true
 	* [Mozart dice game](https://www.mozart-game.cz) - _Musikalisches Würfelspiel_, automatic generation of songs (minuet, trio)
 * WEB
 	* [JSNaturFoto](http://www.jsnaturfoto.cz/) - Web presentation of photographer Jiri Sedlacek
+* Internet of Things
+	* [Dobby](https://github.com/vician/dobby) - Chatbot with additional functionality, designed for Internet of Things
 * Others
 	* [Jízdotéka](https://www.jizdoteka.cz) - Open-source platform for car-pooling
 	* [Vokativy.cz](https://vokativy.cz) - Vocatives for czech surnames
