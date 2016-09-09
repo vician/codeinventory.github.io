@@ -1,0 +1,20 @@
+table#guitar {
+	border: 1px solid black;
+}
+
+table#guitar th {
+	border: 1px solid black;
+}
+
+table#guitar tr.head td {
+	font-weight: bold;
+}
+
+table#guitar tr.point td {
+	background: lightblue;
+}
+
+table#guitar td.chord {
+	background: pink;
+}
+

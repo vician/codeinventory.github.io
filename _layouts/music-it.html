@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include head.html %}
+{% if page.title == "Chords" %}
+<link rel="stylesheet" href="{{ site.url }}/music-it/chords.css">
+{% endif %}
+</head>
+<body class="post-template page" itemscope itemtype="http://schema.org/WebPage">
+
+<main id="notepad-page-container" class="notepad-page-container" role="main">
+    
+    
+        <header class="notepad-page-header">
+            <div class="notepad-page-menu-header">
+                
+                    <a class="notepad-blog-logo" href="index.html">
+                        <img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo">
+                    </a>
+                
+                
+                
+            <div class="notepad-page-title row">
+                <div class="small-12 columns">
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+        </header>
+
+<article class="notepad-page-content">
+                    <div>{{ content }}</div>
+</article>
+        <div class="cf"></div>
+    {% include footer.html %}
+</main>
+
+{% include scripts.html %} 
+<script src="{{ site.url }}/music-it/music-it.js"></script>
+{% if page.title == "Chords" %}
+<script src="{{ site.url }}/music-it/chords.js"></script>
+{% endif %}
+{% if page.title == "Scales" %}
+<script src="{{ site.url }}/music-it/scales.js"></script>
+{% endif %}
+</body>
+</html>
